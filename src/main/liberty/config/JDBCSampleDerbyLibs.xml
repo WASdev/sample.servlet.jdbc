@@ -1,0 +1,7 @@
+<server description="JDBC sample shared library configuration">
+
+    <library id="JDBCSampleDerbyLibs">
+        <fileset dir="${shared.resource.dir}/JDBCSampleDerbyLibs" includes="derby-10.13.1.1.jar" scanInterval="5s" />
+    </library>
+
+</server>
