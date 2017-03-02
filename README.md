@@ -8,9 +8,9 @@ Once the server is running, the application will be available under [http://loca
 ## Running in Eclipse with Maven
 
 1. Clone this project and import into Eclipse as an 'Existing Maven Project'.
-2. Right click the project and select `Run As` -> `Maven Clean`.
-3. Right click the project and select `Run As` -> `Maven Install`.
-4. Right click the project and select `Run As` -> `Maven Build...` then run the goal `liberty:install-server`.
+2. Right-click the project and select **Run As > Maven Clean**.
+3. Right-click the project and select **Run As > Maven Install**.
+4. Right-click the project and select **Run As > Maven Build...** then run the goal `liberty:run-server`.
 5. You should see the following in the console:
    `CWWKZ0001I: Application JDBCApp started in XX.XX seconds.`
     In your browser, enter the URL for the application: [http://localhost:9080/JDBCApp](http://localhost:9080/JDBCApp).
