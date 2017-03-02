@@ -33,12 +33,6 @@ Use the following steps to run the application with Maven:
     $ mvn liberty:run-server
     ```
 
-## Deploying to Bluemix
-
-Click the button below to deploy your own copy of this application to [Bluemix](https://bluemix.net).
-
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/WASdev/sample.servlet.jdbc.git)
-
 # Notice
 
 © Copyright IBM Corporation 2017.
