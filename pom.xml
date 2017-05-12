@@ -42,6 +42,16 @@
 		<package.file>${project.build.directory}/${project.artifactId}.zip</package.file>
 		<packaging.type>usr</packaging.type>
 	</properties>
+	
+	<profiles>
+		<profile>
+			<id>runnable</id>
+			<properties>
+				<package.file>${project.build.directory}/${project.artifactId}.jar</package.file>
+				<packaging.type>runnable</packaging.type>
+			</properties>
+		</profile>
+	</profiles>
 
 	<dependencies>
 		<dependency>
