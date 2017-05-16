@@ -39,7 +39,6 @@
 		<testServerHttpPort>9080</testServerHttpPort>
 		<testServerHttpsPort>9443</testServerHttpsPort>
 		<warContext>JDBCApp</warContext>
-		<package.file>${project.build.directory}/${project.artifactId}.zip</package.file>
 		<packaging.type>usr</packaging.type>
 	</properties>
 	
@@ -47,7 +46,6 @@
 		<profile>
 			<id>runnable</id>
 			<properties>
-				<package.file>${project.build.directory}/${project.artifactId}.jar</package.file>
 				<packaging.type>runnable</packaging.type>
 			</properties>
 		</profile>
@@ -140,7 +138,7 @@
     								<groupId>org.apache.derby</groupId>
     								<artifactId>derby</artifactId>
     								<version>10.13.1.1</version>
-                        			<outputDirectory>${project.build.directory}/liberty/wlp/usr/shared/resources</outputDirectory>                                 
+									<outputDirectory>${project.build.directory}/liberty/wlp/usr/shared/resources</outputDirectory>
                     			</artifactItem>
                				</artifactItems>
 						</configuration>
@@ -161,7 +159,6 @@
 						<type>zip</type>
 					</assemblyArtifact>
 					<configFile>src/main/liberty/config/server.xml</configFile>
-					<packageFile>${package.file}</packageFile>
 					<include>${packaging.type}</include>
 					<bootstrapProperties>
 					    <appContext>${warContext}</appContext>
