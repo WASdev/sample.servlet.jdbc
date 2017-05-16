@@ -133,14 +133,14 @@
 							<goal>copy</goal>
 						</goals>
 						<configuration>
-		                	<artifactItems>
-                    			<artifactItem>
-    								<groupId>org.apache.derby</groupId>
-    								<artifactId>derby</artifactId>
-    								<version>10.13.1.1</version>
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.apache.derby</groupId>
+									<artifactId>derby</artifactId>
+									<version>10.13.1.1</version>
 									<outputDirectory>${project.build.directory}/liberty/wlp/usr/shared/resources</outputDirectory>
-                    			</artifactItem>
-               				</artifactItems>
+								</artifactItem>
+							</artifactItems>
 						</configuration>
 					</execution>
 				</executions>
