@@ -1,4 +1,4 @@
-JDBC Servlet Sample
+JDBC Servlet Sample [![Build Status](https://travis-ci.org/WASdev/sample.servlet.jdbc.svg?branch=master)](https://travis-ci.org/WASdev/sample.servlet.jdbc)
 ==============
 
 The ServletJDBCEngine sample contains a server definition for basic servlet support, and illustrates a simple datasource definition using an included configuration file. It uses Apache Derby (an open source relational database). Also included is a servlet which gets a connection to the database using the defined datasource, creates a table, inserts some data, retrieves the data, and prints the data out to the browser.
