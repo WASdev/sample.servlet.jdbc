@@ -28,7 +28,6 @@ public class EndpointHelper {
     public void testEndpoint(String endpoint, String expectedOutput) {
         String port = System.getProperty("liberty.test.port");
         String war = System.getProperty("war.context");
-    	String apploc = System.getProperty("appLocation");
         String url = "http://localhost:" + port + "/" + war ;
         System.out.println("Testing " + url);
         Response response = sendRequest(url, "GET");

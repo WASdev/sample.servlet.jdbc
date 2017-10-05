@@ -23,7 +23,7 @@ This project can be built with [Apache Maven](http://maven.apache.org/). The pro
 
 Use the following steps to run the application with Maven:
 
-1. Execute full Maven build. This will cause Liberty Maven Plug-in to download and install Liberty profile server.
+1. Execute full Maven build. The Liberty Maven Plug-in will download and install the Liberty server.
     ```bash
     $ mvn clean install
     ```
@@ -31,6 +31,34 @@ Use the following steps to run the application with Maven:
 2. To run the server with the Servlet sample execute:
     ```bash
     $ mvn liberty:run-server
+    ```
+
+## Running with Gradle
+
+This project can be built and with [Gradle](http://gradle.org/). The provided `build.gradle` file applies the Liberty Gradle Plug-in and is configured to automatically download and install the Liberty runtime from Maven Central. The Liberty Gradle Plug-in also has tasks that create, configure, and run applications on a Liberty server.
+
+Use the following steps to run the application with Gradle:
+
+1. Execute the full Gradle build. The Liberty Gradle Plug-in will download and install the Liberty server.
+    ```bash
+    $ ./gradlew clean build
+    ```
+
+2. To start the server with the JDBCApp sample run:
+    ```bash
+    $ ./gradlew libertyStart
+
+    Alternatively, execute the run command:
+    ```bash
+    $ gradle libertyRun --no-daemon
+    ```
+
+3. To stop the server, execute:
+    ```bash
+    $ gradle libertyStop
+    ```  
+
+Please refer to the [ci.gradle](http://github.com/WASDev/ci.gradle) repository for documentation and examples for the Liberty Gradle Plug-in.
     ```
 
 # Notice
@@ -52,6 +80,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ````
-
-[Liberty Maven Plug-in]: https://github.com/WASdev/ci.maven
 
