@@ -35,7 +35,7 @@ Use the following steps to run the application with Maven:
 
 ## Running with Gradle
 
-This project can be built and with [Gradle](http://gradle.org/). The provided `build.gradle` file applies the Liberty Gradle Plug-in and is configured to automatically download and install the Liberty runtime from Maven Central. The Liberty Gradle Plug-in also has tasks that create, configure, and run applications on a Liberty server.
+This project can be built and run with [Gradle](http://gradle.org/). The provided `build.gradle` file applies the Liberty Gradle Plug-in and is configured to automatically download and install the Liberty runtime from Maven Central. The Liberty Gradle Plug-in also has tasks that create, configure, and run applications on a Liberty server.
 
 Use the following steps to run the application with Gradle:
 
@@ -47,6 +47,7 @@ Use the following steps to run the application with Gradle:
 2. To start the server with the JDBCApp sample run:
     ```bash
     $ ./gradlew libertyStart
+    ```
 
     Alternatively, execute the run command:
     ```bash
@@ -59,7 +60,7 @@ Use the following steps to run the application with Gradle:
     ```  
 
 Please refer to the [ci.gradle](http://github.com/WASDev/ci.gradle) repository for documentation and examples for the Liberty Gradle Plug-in.
-    ```
+
 
 # Notice
 
