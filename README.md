@@ -87,5 +87,5 @@ limitations under the License.
 
 [Liberty Maven Plug-in]: https://github.com/WASdev/ci.maven
 [Liberty Gradle Plug-in]: https://github.com/WASdev/ci.gradle
-[Maven Central](https://search.maven.org/)
+[Maven Central]: https://search.maven.org/
 
