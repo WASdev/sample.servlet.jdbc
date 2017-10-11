@@ -9,7 +9,7 @@ description = "Liberty JDBC Gradle example"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
+    options.encoding = 'UTF-8'
 }
 
 buildscript {
@@ -30,7 +30,7 @@ repositories {
     mavenCentral()   
 }
 configurations{ 
-     derby { transitive = false }
+    derby { transitive = false }
 }
 
 dependencies {
@@ -104,8 +104,7 @@ task printMessageAboutRunningServer {
 
 clean.dependsOn 'libertyStop'
 check.dependsOn 'integrationTest'
-installApps.dependsOn 'war'
-libertyStart.dependsOn 'copyDerby', 'installApps'
+libertyStart.dependsOn 'copyDerby'
 copyDerby.dependsOn 'libertyCreate'
 integrationTest.dependsOn 'libertyStart', 'testClasses'
 integrationTest.finalizedBy 'libertyStop'

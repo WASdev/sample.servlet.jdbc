@@ -54,12 +54,12 @@ Use the following steps to run the application with the Gradle wrapper. (Windows
 
     Alternatively, execute the run command:
     ```bash
-    $ gradle libertyRun --no-daemon
+    $ ./gradle libertyRun --no-daemon
     ```
 
 3. To stop the server, execute:
     ```bash
-    $ gradle libertyStop
+    $ ./gradle libertyStop
     ```  
 
 Please refer to the [Liberty Gradle Plug-in] repository for documentation and configuration examples for the plug-in.
