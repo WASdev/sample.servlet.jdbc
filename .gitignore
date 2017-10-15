@@ -2,7 +2,8 @@ target/
 .classpath
 .project
 .settings/
+.DS_Store
+.apt_generated/
+.gradle/
+build/
 bin/
-/.apt_generated/
-/.gradle/
-/build/

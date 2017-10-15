@@ -6,30 +6,25 @@ version = '1'
 
 description = "Liberty JDBC Gradle example"
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+	options.encoding = 'UTF-8'
 }
 
 buildscript {
     repositories {
-        mavenLocal()
-        maven {
-            name = 'Sonatype Nexus Snapshots'
-            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
-        }
         mavenCentral()
     }
     dependencies {
-        classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:2.0-SNAPSHOT'
+        classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:2.0'
     }
 }
 
 repositories {
-    mavenCentral()   
+    mavenCentral()
 }
-configurations{ 
+configurations{
     derby { transitive = false }
 }
 
@@ -44,7 +39,7 @@ dependencies {
 
 ext {
     testServerHttpPort = 9080
-    testServerHttpsPort = 9443 
+    testServerHttpsPort = 9443
     warContext = 'JDBCApp'
     packagingType = 'usr'
 }
@@ -52,24 +47,24 @@ ext {
 war {
     archiveName = baseName + '.' + extension
 }
-    
+
 liberty {
     server {
         configFile = file('src/main/liberty/config/server.xml')
-        bootstrapProperties = ['default.http.port': testServerHttpPort, 
+        bootstrapProperties = ['default.http.port': testServerHttpPort,
                                'default.https.port': testServerHttpsPort,
                                'appContext': warContext,
                                'appLocation': war.archiveName]
     }
-    
+
     packageLiberty {
         include = packagingType
     }
 }
 
-task copyDerby { 
+task copyDerby {
     doLast {
-        copy { 
+        copy {
             from configurations.derby
             into "$buildDir/wlp/usr/shared/resources"
             include '*.jar'
@@ -104,7 +99,8 @@ task printMessageAboutRunningServer {
 
 clean.dependsOn 'libertyStop'
 check.dependsOn 'integrationTest'
-libertyStart.dependsOn 'copyDerby'
+installApps.dependsOn 'war'
+libertyStart.dependsOn 'copyDerby', 'installApps'
 copyDerby.dependsOn 'libertyCreate'
 integrationTest.dependsOn 'libertyStart', 'testClasses'
 integrationTest.finalizedBy 'libertyStop'
