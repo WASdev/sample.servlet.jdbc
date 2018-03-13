@@ -5,9 +5,9 @@ The ServletJDBCEngine sample contains a server definition for basic servlet supp
 
 Once the server is running, the application will be available under [http://localhost:9080/JDBCApp](http://localhost:9080/JDBCApp).
 
-## Running with Maven
+## Running in Eclipse
 
-### Running in Eclipse with Maven
+### Maven
 
 1. Clone this project and import into Eclipse as an 'Existing Maven Project'.
 2. Right-click the project and select **Run As > Maven Clean**.
@@ -18,8 +18,23 @@ Once the server is running, the application will be available under [http://loca
     In your browser, enter the URL for the application: [http://localhost:9080/JDBCApp](http://localhost:9080/JDBCApp).
     In your browser, you should see the message:
     `Text retrieved from database is: myHomeCounty`
+    
+### Gradle
 
-### Running from the command-line with Maven
+Eclipse will use the Eclipse Buildship Gradle Plugin for Gradle project management and accessibility to tasks.
+
+1. Go to *Help > Eclipse Marketplace > Install Buildship Gradle Integration 2.0*
+2. Clone this project and import into Eclipse as an 'Existing Gradle Project'.
+3. Go to *Window > Show View > Other > Gradle Executions & Gradle Tasks*
+4. Go to Gradle Tasks view and run `clean` in build folder, then `build` in build folder, then `libertyStart` in liberty folder.
+5. You should see the following in the console:`CWWKZ0001I: Application JDBCApp started in XX.XX seconds.`
+    In your browser, enter the URL for the application: [http://localhost:9080/JDBCApp](http://localhost:9080/JDBCApp).
+    In your browser, you should see the message:
+    `Text retrieved from database is: myHomeCounty`
+
+## Running from the Command-line
+
+### Maven
 
 This project can be built with [Apache Maven](http://maven.apache.org/). The project uses the [Liberty Maven Plug-in] to automatically download and install the Liberty 
 Java EE Web Profile 7 from [Maven Central]. The Liberty Maven Plug-in is also used to create, configure, and run the application on the Liberty server. 
@@ -36,7 +51,7 @@ Use the following steps to run the application with Maven:
     $ mvn liberty:run-server
     ```
 
-## Running with Gradle
+### Gradle
 
 This project can also be built and run using [Gradle](http://gradle.org/). The provided `build.gradle` file applies the Liberty Gradle Plug-in and is configured to automatically download and install the Liberty Java EE Web Profile 7 runtime from [Maven Central]. The Liberty Gradle Plug-in also has tasks that create, configure, and run applications on a Liberty server.
 
